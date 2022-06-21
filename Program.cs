@@ -12,10 +12,10 @@ namespace encryptString
         static void Main(string[] args)
         {
 
-           // Checking to see if any command line parameters were added to the commmand,
-           // if not printing out instructions
+            // Checking to see if any command line parameters were added to the commmand,
+            // if not printing out instructions
 
-           if (args.Length == 0)
+            if (args.Length == 0)
 	        {
 		        Console.WriteLine("\nInvalid Parameters\n");
                 Console.WriteLine("Encrypt Useage: encryptString encrypt -s {0}stringValue{0}", Convert.ToChar(34));
@@ -35,27 +35,27 @@ namespace encryptString
             switch (command)    
 	        {
                 // if the encrypt parameter was defined, then do this...
-		        case "encrypt" when args.Length == 3 && args[1] == "-s":
+                    case "encrypt" when args.Length == 3 && args[1] == "-s":
                     content = args[2];
                     encrypted = EncryptString(content, key);
-			        Console.WriteLine("\nEncrypted String: " + encrypted + "\n");
-			        break;
-
+                    Console.WriteLine("\nEncrypted String: " + encrypted + "\n");
+                    break;
+                    
                 // if the decrypt parameter was defined, then do this...
-		        case "decrypt" when args.Length == 3 && args[1] == "-s":
-			        encrypted = args[2];
+                    case "decrypt" when args.Length == 3 && args[1] == "-s":
+                    encrypted = args[2];
                     decrypted = DecryptString(encrypted, key);
                     Console.WriteLine("\nDecrypted String: " + decrypted + "\n");
-			        break;
+                    break;
 
                 // if the commands don't make any sense then print out the instructions again
-		        default:
-			        Console.WriteLine("\nInvalid Parameters\n");
+                    default:
+                    Console.WriteLine("\nInvalid Parameters\n");
                     Console.WriteLine("Encrypt Useage: encryptString encrypt -s {0}stringValue{0}", Convert.ToChar(34));
                     Console.WriteLine("Decrypt Useage: encryptString decrypt -s {0}stringValue{0}", Convert.ToChar(34));
                     Console.WriteLine("\n");
-			    break;
-	        }
+                    break;
+            }
 
             System.Environment.Exit(0);
         }

@@ -65,7 +65,6 @@ namespace encryptString
         public static string EncryptString(string text, string keyString)
         {
             var key = Encoding.UTF8.GetBytes(keyString);
-
             using (var aesAlg = Aes.Create())
             {
                 using (var encryptor = aesAlg.CreateEncryptor(key, aesAlg.IV))

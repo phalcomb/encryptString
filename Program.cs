@@ -17,11 +17,11 @@ namespace encryptString
 
             if (args.Length == 0)
 	        {
-		        Console.WriteLine("\nInvalid Parameters\n");
+                Console.WriteLine("\nInvalid Parameters\n");
                 Console.WriteLine("Encrypt Useage: encryptString encrypt -s {0}stringValue{0}", Convert.ToChar(34));
                 Console.WriteLine("Decrypt Useage: encryptString decrypt -s {0}stringValue{0}", Convert.ToChar(34));
                 Console.WriteLine("\n");
-		        return;
+                return;
 	        }
 
             var key = "C498FD371940D49710867BE27345D3B9";   // Setting the encryption key for the program

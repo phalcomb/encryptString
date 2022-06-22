@@ -18,8 +18,8 @@ namespace encryptString
             if (args.Length == 0)
 	        {
                 Console.WriteLine("\nInvalid Parameters\n");
-                Console.WriteLine("Encrypt Useage: encryptString encrypt -s {0}stringValue{0}", Convert.ToChar(34));
-                Console.WriteLine("Decrypt Useage: encryptString decrypt -s {0}stringValue{0}", Convert.ToChar(34));
+                Console.WriteLine("Encrypt Useage: encryptString encrypt -s 'String to Encrypt'");
+                Console.WriteLine("Decrypt Useage: encryptString decrypt -s 'String to Decryptcd'");
                 Console.WriteLine("\n");
                 return;
 	        }
@@ -38,14 +38,14 @@ namespace encryptString
                     case "encrypt" when args.Length == 3 && args[1] == "-s":
                     content = args[2];
                     encrypted = EncryptString(content, key);
-                    Console.WriteLine("\nEncrypted String: " + encrypted + "\n");
+                    Console.WriteLine("\nEncrypted String: \n\n" + encrypted + "\n");
                     break;
                     
                 // if the decrypt parameter was defined, then do this...
                     case "decrypt" when args.Length == 3 && args[1] == "-s":
                     encrypted = args[2];
                     decrypted = DecryptString(encrypted, key);
-                    Console.WriteLine("\nDecrypted String: " + decrypted + "\n");
+                    Console.WriteLine("\nDecrypted String: \n\n" + decrypted + "\n");
                     break;
 
                 // if the commands don't make any sense then print out the instructions again
@@ -76,13 +76,9 @@ namespace encryptString
                         {
                             swEncrypt.Write(text);
                         }
-
                         var iv = aesAlg.IV;
-
                         var decryptedContent = msEncrypt.ToArray();
-
                         var result = new byte[iv.Length + decryptedContent.Length];
-
                         Buffer.BlockCopy(iv, 0, result, 0, iv.Length);
                         Buffer.BlockCopy(decryptedContent, 0, result, iv.Length, decryptedContent.Length);
 
@@ -92,19 +88,16 @@ namespace encryptString
             }
         }
 
-        // Function decrypt the string for storage
+        // Function decrypt the string for use
 
         public static string DecryptString(string cipherText, string keyString)
         {
             var fullCipher = Convert.FromBase64String(cipherText);
-
             var iv = new byte[16];
             var cipher = new byte[fullCipher.Length - iv.Length];
-
             Buffer.BlockCopy(fullCipher, 0, iv, 0, iv.Length);
             Buffer.BlockCopy(fullCipher, iv.Length, cipher, 0, cipher.Length);
             var key = Encoding.UTF8.GetBytes(keyString);
-
             using (var aesAlg = Aes.Create())
             {
                 using (var decryptor = aesAlg.CreateDecryptor(key, iv))
@@ -120,7 +113,6 @@ namespace encryptString
                             }
                         }
                     }
-
                     return result;
                 }
             }

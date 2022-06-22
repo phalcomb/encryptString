@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VyZketjFimkMT2OCKUegyM7oDatZ4CnIHVxNdcg1djnXY5crlTjAUWy1ve2G4pwWUbunTlBhCef/SunUKjvMyA==",
+  "dgSpecHash": "9zpZLjEidTcamYakS2FXRMQdoD2+gwWuyiQskpkwCbz1LgYK4SwKm/qJNjskveSkSyGDBE/45RQE+5W2RHIIsw==",
   "success": true,
-  "projectFilePath": "/Users/philiph/Source/encryptString/encryptString.csproj",
+  "projectFilePath": "/home/elroy/Documents/dotNET/encryptString/encryptString.csproj",
   "expectedPackageFiles": [
-    "/Users/philiph/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "/Users/philiph/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "/Users/philiph/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512"
+    "/home/elroy/.nuget/packages/microsoft.netcore.app.runtime.linux-arm64/6.0.6/microsoft.netcore.app.runtime.linux-arm64.6.0.6.nupkg.sha512",
+    "/home/elroy/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-arm64/6.0.6/microsoft.aspnetcore.app.runtime.linux-arm64.6.0.6.nupkg.sha512"
   ],
   "logs": []
 }

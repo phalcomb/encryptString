@@ -19,7 +19,7 @@ namespace encryptString
 	        {
                 Console.WriteLine("\nInvalid Parameters\n");
                 Console.WriteLine("Encrypt Useage: encryptString encrypt -s 'String to Encrypt'");
-                Console.WriteLine("Decrypt Useage: encryptString decrypt -s 'String to Decryptcd'");
+                Console.WriteLine("Decrypt Useage: encryptString decrypt -s 'String to Decrypt'");
                 Console.WriteLine("\n");
                 return;
 	        }
